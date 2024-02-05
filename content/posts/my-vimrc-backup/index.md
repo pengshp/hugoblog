@@ -34,10 +34,10 @@ tags: [Linux,vim]
 
 Debian/Ubuntu 放在`/etc/vim/vimrc.local`下用于全局配置，对所有用户都生效
 
-放在`~/.vimrc`只对当前登录用户生效。
+放在`~/.vim/vimrc`只对当前登录用户生效。
 
-```shell
-~$ vim ~/.vimrc
+```bash
+~$ vim ~/.vim/vimrc
 "开启语法高亮
 syntax on
 " 检测文件类型
@@ -50,8 +50,8 @@ endif
 set ruler
 " 在状态栏显示正在输入的命令
 set showcmd
-" 左下角显示当前Vim模式
-set showmode
+
+set noshowmode
 " 括号匹配模式
 set showmatch
 " 显示行号
@@ -68,7 +68,9 @@ set softtabstop=4
 
 " 用space替代tab的输入 
 set expandtab
-
+set clipboard=unnamed
+set wildmenu
+set laststatus=2
 "不用space替代tab的输入
 " set noexpandtab
 
@@ -80,7 +82,8 @@ set autoindent
 
 " 设置编码方式
 set encoding=utf-8
-
+set fileencoding=utf-8
+set termencoding=utf-8
 set helplang=cn
 
 set magic
@@ -92,10 +95,26 @@ set incsearch
 
 "不要备份文件
 set nobackup
+
+" vim-plug
+call plug#begin('~/.vim/plugged')
+
+Plug 'mcchrish/nnn.vim'
+Plug 'junegunn/fzf.vim'
+Plug 'itchyny/lightline.vim'
+Plug 'tpope/vim-commentary'
+Plug 'jiangmiao/auto-pairs'
+Plug 'community/vim-nerdtree'
+call plug#end()
 ```
+
+随着时代的进步，感觉`vim`已过时，推荐使用`neovim`,使用`lua`脚本语言配置，抛弃了vim中冗余的功能。功能更加强大，配置更加灵活，也可以使用成熟的配置版本，如我正在使用的`LazyVim`
 
 ### 参考链接
 
-1.[vim教程网](https://vimjc.com/)
+1. [vim教程网](https://vimjc.com/)
 
-2.[vim官网](https://www.vim.org/)
+2. [vim官网](https://www.vim.org/)
+
+3. [vim-plug](https://github.com/junegunn/vim-plug)
+4. [LazyVim](https://www.lazyvim.org/)

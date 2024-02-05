@@ -1,9 +1,16 @@
 +++
 title = 'About me'
 date = 2024-02-05T11:20:13+08:00
+isCJKLanguage = true
+lang = 'zh-cn'
+showComments = false
+showTaxonomies = false
+showPagination = false
+showBreadcrumbs = false
+xml = false
 +++
 
-# About Me!!
+## About Me
 
 **世界那么大，你我在这里相遇！**
 
@@ -14,9 +21,10 @@ date = 2024-02-05T11:20:13+08:00
 - 知乎划水用户
 - 树莓派资深玩家
 - Python爬虫中级玩家
-- Docker重度用户
+- Docker/K8S 重度用户
+- Gopher
 - GUN/Linux开源爱好者
-- 信奉vim是最好的编辑器
+- 信奉`neovim` 是最好的编辑器
 - 座右铭: 人生是赛跑，但是比的是跑得远而不是跑的快，所以一直向前跑的人才会赢。
 - 最大的梦想: 实现财富自由提前退休去旅游。
 
@@ -28,21 +36,19 @@ date = 2024-02-05T11:20:13+08:00
 
 2、[DigtalOcean服务器-注册送10$](https://m.do.co/c/655f233acdc9)
 
-3、[滴滴云服务器-注册送优惠券](https://i.didiyun.com/2an5QPNLhtH)
+3、[ProcessOn在线绘图](https://www.processon.com/i/58651c76e4b0e06926af55e0)
 
-4、[ProcessOn在线绘图](https://www.processon.com/i/58651c76e4b0e06926af55e0)
+4、[Affnity Photo教程-注册送100￥](https://yx.qiqiuyun.net/drp/redirect/type/redirect/token/e49a8b31c7674cc1954b3ad2773c9609%3AL3JlZ2lzdGVy)
 
-5、[Affnity Photo教程-注册送100￥](https://yx.qiqiuyun.net/drp/redirect/type/redirect/token/e49a8b31c7674cc1954b3ad2773c9609%3AL3JlZ2lzdGVy)
-
-6、[阿里云服务器优惠](https://www.aliyun.com/minisite/goods?userCode=shw4lml5&share_source=copy_link)
+5、[阿里云服务器优惠](https://www.aliyun.com/minisite/goods?userCode=shw4lml5&share_source=copy_link)
 
 ## 个人简历:
 
 * 教育背景：本科（SYSU）
 * 专业：电子信息科学与技术
 * 职业： Linux运维工程师
-* 技能：云计算Linux,Docker/K8s,Ansible,Python,IoT......
-* 系统：Windows11 Pro|CentOS(Rocky Linux)|Raspbian|Arch Linux|OpenWrt
+* 技能：云计算Linux,Docker/K8s,Ansible,Golang,Python,IoT......
+* 系统：Windows11 Pro|CentOS(Rocky Linux)|Arch Linux|OpenWrt
 * 兴趣：喜欢看火影、龙珠🐲、漫威英雄电影，桌球，旅游，无聊时瞎折腾！
 * 转折：2017年9月决心从EE转云计算Linux方向!
 
@@ -55,4 +61,4 @@ date = 2024-02-05T11:20:13+08:00
 * QQ: 1723549711[注明来意]
 * Telegram: [Victor](https://t.me/Neal_linux)
 
-### 添加友链请 Mail me!
+## 添加友链请 Mail to me!

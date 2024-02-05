@@ -1,6 +1,6 @@
 +++
 title = 'Setup Fail2ban'
-date = 2024-02-05T08:06:23+08:00
+date = 2023-06-05T08:06:23+08:00
 tags = ['linux']
 categories = ['Linux']
 

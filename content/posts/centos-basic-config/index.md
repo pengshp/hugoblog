@@ -20,10 +20,10 @@ sudo systemctl enable network
 ### 2、修改yum源
 
 ```sh
-mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
-wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
-yum clean all
-yum makecache
+$ mv /etc/yum.repos.d/CentOS-Base.repo /etc/yum.repos.d/CentOS-Base.repo.backup
+$ wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo
+$ yum clean all
+$ yum makecache
 ```
 
 ### 3、更新软件源
@@ -146,6 +146,8 @@ $ timedatectl set-timezone Asia/Shanghai
 ```
 
 ### 13. 安装vm-tools
+
+如果你在VMware相关的软件中安装`CentOS`则安装下面的软件。
 
 ```shell
 ~$ yum install -y open-vm-tools

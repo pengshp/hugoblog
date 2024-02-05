@@ -38,7 +38,6 @@ alias sf='fc-list : family style | fzf'
 中文字体推荐谷歌的思源黑体`Noto Sans SC`，华为的鸿蒙黑体`HarmonyOS Sans SC`，小米的`MiSans`
 ```bash
 $ yay -S ttf-harmonyos-sans
-
 ```
 
 ## Nerd字体
@@ -109,6 +108,10 @@ $ nvim ~/.config/fontconfig/fonts.conf
 </fontconfig>
 
 ```
+
+{{< alert >}}
+**Warning!**  经过测试这种方式只在LANG=en_US.UTF-8的环境中有效!
+{{< /alert >}}
 
 ## Unicode
 
