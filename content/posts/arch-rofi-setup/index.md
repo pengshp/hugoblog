@@ -1,8 +1,8 @@
 ---
 title: "Arch Linux设置rofi"
 date: 2022-04-25T20:37:46+08:00
-tags: [Linux]
-categories: [Linux]
+tags: [linux]
+categories: [linux]
 ---
 
 [rofi](https://github.com/lbonn/rofi) : A window switcher, run dialog and dmenu replacement. 简单说就相当于我们使用的`utools`, 可以启动应用，搜索文件，搜索emoji,执行命令等。但utools在Arch Linux的KDE Plasma桌面环境的兼容性不好，于是找到了替代品rofi.试了一下，效果很不错，分享一下自己的配置。
@@ -28,7 +28,7 @@ Rofi支持下面的模式（Modes）
 
 ```shell
 # 或者使用yay安装
-~$ sudo pacman -S chaotic-aur/rofi-lbonn-wayland
+~$ sudo pacman -S rofi
 
 # emoji搜索支持
 ~$ sudo pacman -S community/rofi-emoji

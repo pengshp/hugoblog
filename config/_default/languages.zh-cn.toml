@@ -11,7 +11,7 @@ title = "Neal's Blog"
   logo = "img/logo.png"
   # secondaryLogo = "img/secondary-logo.png"
   description = "Linux 运维"
-  copyright = "© 2020-2024 Neal"
+  copyright = "© 2020-2025 Neal"
 
 [author]
   name = "Neal"

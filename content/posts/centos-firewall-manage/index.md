@@ -5,8 +5,6 @@ categories: [CentOS]
 tags: [CentOS]
 ---
 
-![firewall](/images/firewall.png "firewall")
-
 CentOS7.x 使用firewalld 防火墙替代了 CentOS6.x 中的 iptables,两者的使用上有较大的区别，本文介绍firewall在日常的使用和管理中常使用的一些基本命令。
 
 <!--more-->
@@ -76,7 +74,7 @@ $ firewall-cmd --reload
 
 #### 6、查看开启的服务和端口
 
-```shell
+```sh
 # 开启的服务
 $ firewall-cmd --permanent --zone=public --list-services
 
@@ -92,7 +90,7 @@ $ firewall-cmd ---query-service http
 
 #### 8. 查看当前`zone`中的规则
 
-```shell
+```sh
 $ firewall-cmd --list-all
 public (active)
   target: default
@@ -112,8 +110,8 @@ public (active)
 
 #### 9. 默认`zone`管理
 
-```shell
-$ firewall-cmd --get-default-zone 
+```sh
+$ firewall-cmd --get-default-zone
 public
 
 # 设置默认的zone
@@ -123,7 +121,7 @@ $ firewall-cmd --set-default-zone=public
 
 10. #### 删除规则
 
-```shell
+```sh
 [root@localhost ~]$ firewall-cmd  xxx
 --remove-service=http ##在home区域内将http服务删除在开放列表中删除
 --remove-port=8080 # s

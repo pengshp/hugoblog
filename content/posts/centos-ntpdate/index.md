@@ -6,7 +6,9 @@ description: "Linux时间同步"
 categories: [CentOS]
 tags: [CentOS]
 ---
+
 Linux中很多服务需要进行时间同步，不然容易导致出错。本文介绍使用阿里云的时间服务器同步服务器的时间。下面介绍三种时间同步的方案。
+
 <!--more-->
 
 ## 方案1：使用NTP同步时间
@@ -18,6 +20,7 @@ $ yum install -y ntpdate
 ```
 
 ### 2、时间同步服务器
+
 可用的时间同步服务器，阿里提供了一些NTP时间服务器可以用于从互联网中同步服务器的时间；`ntp.aliyun.com`
 
 - ntp1.aliyun.com
@@ -26,6 +29,7 @@ $ yum install -y ntpdate
 - ntp4.aliyun.com
 
 ### 3、同步时间
+
 从上面的时间同步服务器中选择一个进行时间同步。
 
 ```sh
@@ -33,6 +37,7 @@ $ ntpdate -u ntp.aliyun.com
 ```
 
 ### 4、加入计划任务
+
 可以把时间同步加入系统的计划任务，定时从互联网同步时间
 
 ```sh
@@ -49,20 +54,20 @@ $ systemctl enable crond
 
 ### 1. 修改配置文件
 
-```shell
+```sh
 [xdl@CentOS] ~$ sudo vim /etc/chrony.conf
 pool ntp1.aliyun.com iburst
 ```
 
 ### 2. 启动服务
 
-```shell
+```sh
 [xdl@CentOS] ~$ sudo systemctl enable --now chronyd.service
 ```
 
 ### 3. 查看状态
 
-```shell
+```sh
 [xdl@CentOS] ~$ chronyc sources -v
 210 Number of sources = 1
 MS Name/IP address         Stratum Poll Reach LastRx Last sample

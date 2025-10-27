@@ -2,7 +2,7 @@
 title: "Linux 环境下部署Apache Tomcat Server"
 date: 2021-12-30T10:47:04+08:00
 description: "Linux下Tomcat Server的部署"
-tags: ['Linux','Tomcat']
+tags: ["linux", "Tomcat"]
 categories: ["linux"]
 ---
 
@@ -131,7 +131,7 @@ JAVA应用的`war`包放在`/usr/local/tomcat/webapps/`里，并删除`ROOT`目�
 ### 设置Tomcat的环境变量
 
 ```bash
-$ vim /etc/profile.d/tomcat.sh
+$ sudo vim /etc/profile.d/tomcat.sh
 #TOMCAT
 export TOMCAT_HOME=/usr/local/tomcat
 export PATH=$PATH:$TOMCAT_HOME/bin

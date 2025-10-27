@@ -2,7 +2,7 @@
 title: 使用 Docker buildx 构建多架构镜像
 date: 2020-07-16T02:47:34+08:00
 categories: [Docker]
-tags: [Docker,Linux]
+tags: [Docker, Linux]
 ---
 
 ![blog-docker-buildx](https://pengshp.coding.net/p/images/d/images/git/raw/master/blog-docker-buildx.png "buildx")
@@ -22,7 +22,7 @@ BuildKit 是下一代的镜像构建组件，主要特点有很多，本文主�
 
 ## 2.开始实验性功能
 
-```shell
+```sh
 ~$ vim /etc/docker/daemon.json
 {
     "experimental": true
@@ -45,7 +45,7 @@ Server: Docker Engine - Community
 
 ## 2.安装跨平台编译环境依赖支持
 
-```shell
+```sh
 ~$ apt install qemu binfmt-support qemu-user-static
 ```
 
@@ -55,7 +55,7 @@ Server: Docker Engine - Community
 
 下载地址：<https://github.com/docker/buildx/releases/>
 
-```shell
+```sh
 xdl@ubuntu20:~$ mkdir -p ~/.docker/cli-plugins
 xdl@ubuntu20:~$ mv buildx-v0.4.1.linux-amd64 .docker/cli-plugins/docker-buildx
 xdl@ubuntu20:~$ chmod a+x ~/.docker/cli-plugins/docker-buildx
@@ -63,10 +63,10 @@ xdl@ubuntu20:~$ chmod a+x ~/.docker/cli-plugins/docker-buildx
 
 ## 4.准备环境
 
-```shell
+```sh
 xdl@ubuntu20:~$ docker buildx ls
 NAME/NODE DRIVER/ENDPOINT STATUS  PLATFORMS
-default * docker                  
+default * docker
   default default         running linux/amd64, linux/386
 xdl@ubuntu20:~$ docker buildx create --name mybuilder \
 			--platform linux/arm,linux/arm64,linux/amd64
@@ -84,7 +84,7 @@ Status:    inactive   # <------- 未运行
 Platforms: linux/arm/v7*, linux/arm64*, linux/amd64*
 
 $ docker buildx inspect --bootstrap
-[+] Building 3.5s (1/1) FINISHED                                                     
+[+] Building 3.5s (1/1) FINISHED
  => [internal] booting buildkit                           3.5s
  => => pulling image moby/buildkit:buildx-stable-1        3.2s
  => => creating container buildx_buildkit_mybuilder0      0.4s
@@ -100,7 +100,7 @@ Platforms: linux/arm/v7*, linux/arm64*, linux/amd64*, linux/386
 
 ## 5.登录Docker Hub
 
-```shell
+```sh
 # 登录 DockerHub 便于push images
 ~$ docker login
 ```
@@ -109,7 +109,7 @@ Platforms: linux/arm/v7*, linux/arm64*, linux/amd64*, linux/386
 
 下面使用`Trojan`源码编译适用多CPU架构的 docker 镜像，系统配置越高编译越开，需要设置科学上网环境或者在国外的VPS上编译。由于我常使用的CPU架构有 `armv7,arm64,amd64`,其它的可自己添加，我就只编译这三种架构的镜像。
 
-```shell
+```sh
 # 下载最新Trojan源码
 $ wget https://github.com/trojan-gfw/trojan/archive/v1.16.0.zip
 $ unzip *.zip
@@ -122,7 +122,7 @@ $ docker buildx build --platform linux/arm,linux/arm64,linux/amd64 \
                       -t pengshp/trojan:v1.16 . --push
 ```
 
-> --platform  指定要编译的CPU架构
+> --platform 指定要编译的CPU架构
 >
 > --push 编译完后上传到 Docker Hub
 

@@ -1,28 +1,33 @@
 ---
-title: 'ESP8266控制DHT11的温湿度采集'
+title: "ESP8266控制DHT11的温湿度采集"
 date: 2016-11-24T02:47:34+08:00
 categories: [IoT]
-tags: [ESP8266,Micropython]
+tags: [ESP8266, Micropython]
 ---
 
 项目描述：闲来无事，制作了一个用ESP8266控制DHT11采集温度，湿度并在OLED屏显示的系统，使用了MQTT协议上传网络在手机显示，编程语言使用MicroPython.巩固一下所学到的一些知识。
+
 <!-- more -->
 
 ### 一、项目准备
+
 #### 1.所需材料
-* DHT11 温湿度传感器
-* NUDEMCU 开发板
-* IIC 接口 OLED 彩屏
-* 小灯，电阻，面包板，导线若干
+
+- DHT11 温湿度传感器
+- NUDEMCU 开发板
+- IIC 接口 OLED 彩屏
+- 小灯，电阻，面包板，导线若干
 
 #### 2.开发环境
-* MicroPython
-* MQTT
+
+- MicroPython
+- MQTT
 
 ### 二、项目制作
-#### 1.电路连接图
-![2016112455717wenshidu.png](http://7xseex.com1.z0.glb.clouddn.com/2016112455717wenshidu.png)
 
+#### 1.电路连接图
+
+![2016112455717wenshidu.png](http://7xseex.com1.z0.glb.clouddn.com/2016112455717wenshidu.png)
 
 按照如上电路图连接，其中`NUDEMCU`的`USB`连接电脑`USB`.
 
@@ -112,16 +117,17 @@ if __name__ == '__main__':
 ```
 
 #### 3.项目描述
-* 使用了`iot.eclipse.org`的`MQTT`服务;
-* `ESP8266`运行的是`Micropython`的固件，需自行烧写；
-* `main.py`文件使用 `Micropython`的`webrepl`服务上传，复位后自动运行；
-* 手机端下载一个`MQTT Client` ,连上`iot.eclipse.org`，并且订阅这些消息便可以看到收到的信息。
-效果如下所示：
-![2016112581569tem_hum.png](http://7xseex.com1.z0.glb.clouddn.com/2016112581569tem_hum.png)
+
+- 使用了`iot.eclipse.org`的`MQTT`服务;
+- `ESP8266`运行的是`Micropython`的固件，需自行烧写；
+- `main.py`文件使用 `Micropython`的`webrepl`服务上传，复位后自动运行；
+- 手机端下载一个`MQTT Client` ,连上`iot.eclipse.org`，并且订阅这些消息便可以看到收到的信息。
+  效果如下所示：
+  ![2016112581569tem_hum.png](http://7xseex.com1.z0.glb.clouddn.com/2016112581569tem_hum.png)
 
 ### 三、参考连接
+
 1.webrepl:<http://micropython.org/webrepl/>
 2.MQTT Server:<http://mqtt.org/documentation>
 3.iot.eclipse:<http://iot.eclipse.org>
 4.MicroPython:<http://micropython.org>
-

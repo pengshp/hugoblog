@@ -1,7 +1,7 @@
 ---
 title: "CentOS设置KVM虚拟化环境"
 date: 2021-12-21T23:32:23+08:00
-tags: [CentOS,KVM]
+tags: [CentOS, KVM]
 categories: [CentOS]
 ---
 
@@ -11,7 +11,31 @@ Kernel-based Virtual Machine (KVM)是一种集成到Linux的开源的虚拟化�
 
 ## KVM虚拟化架构图
 
-![kvm-architecture](https://hugoblog-img-1251694304.cos.ap-guangzhou.myqcloud.com/blog/kvm-architecture.png "KVM")
+```mermaid
+graph TD
+subgraph 物理服务器
+A[Host OS] --> B[KVM内核模块]
+B --> C[硬件VT支持]
+A --> D[QEMU进程]
+D --> E[虚拟设备]
+D --> F[管理接口]
+end
+
+    subgraph 虚拟机1
+        G[Guest OS] --> H[虚拟CPU]
+        G --> I[虚拟内存]
+        G --> J[virtio设备]
+    end
+
+    subgraph 虚拟机2
+        K[Guest OS] --> L[虚拟CPU]
+        K --> M[虚拟内存]
+        K --> N[virtio设备]
+    end
+
+    D --> G
+    D --> K
+```
 
 ## 验证环境
 
@@ -77,8 +101,6 @@ sudo systemctl enable --now  libvirtd.service
 ### 添加桥接设备
 
 在cockpit web界面的网络 --> 添加桥接 --> 端口选择你的真实网卡
-
-
 
 使用命令行添加网桥设备
 

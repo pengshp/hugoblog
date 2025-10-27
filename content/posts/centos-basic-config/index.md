@@ -2,7 +2,7 @@
 title: CentOS7基本配置
 date: 2018-01-02T02:47:34+08:00
 categories: [CentOS]
-tags: [CentOS,Linux]
+tags: [CentOS, Linux]
 ---
 
 ![centos](/images/centos.png "CentOS")
@@ -11,10 +11,11 @@ CentOS是目前主流的服务器发行版本，本文介绍CentOS初始化安�
 <!--more-->
 
 ### 1、配置网络
+
 ```sh
 sudo nmtui  #  配置IP
 sudo systemctl start network
-sudo systemctl enable network 
+sudo systemctl enable network
 ```
 
 ### 2、修改yum源
@@ -28,14 +29,14 @@ $ yum makecache
 
 ### 3、更新软件源
 
-```shell
+```sh
 $ yum -y update
 $ yum -upgrade
 ```
 
 ### 4、安装pip
 
-```shell
+```sh
 yum -y install epel-release
 yum -y install python3-pip
 sudo pip3 install --upgrade pip
@@ -43,7 +44,7 @@ sudo pip3 install --upgrade pip
 
 ### 5、安装 zsh + oh my zsh
 
-```shell
+```sh
 $ yum install zsh git
 $ git clone https://github.com/robbyrussell/oh-my-zsh.git ~/.oh-my-zsh
 $ cp ~/.oh-my-zsh/templates/zshrc.zsh-template ~/.zshrc
@@ -68,14 +69,16 @@ $ chsh -s /bin/zsh
 
 ### 6、安装vim
 
-    $ yum -y install vim
+```sh
+$ yum -y install vim
+```
 
 #### 配置vim
 
 ```sh
 [root@CentOS7] ~$ vim /etc/vim/vimrc
 " 开启语法高亮
-syntax on 
+syntax on
 " 检测文件类型
 filetype on
 " 设置在Vim中可以使用鼠标，防止终端无法拷贝
@@ -91,7 +94,7 @@ set showmode
 " 显示行号
 "set number
 " 设置tab宽度
-set tabstop=4  
+set tabstop=4
 " 智能自动缩进
 set smartindent
 " 设置自动对齐空格数
@@ -116,32 +119,38 @@ set smarttab
 
 ### 7、安装常用软件
 
-	$ yum install -y net-tools git htop lrzsz
+```sh
+$ yum install -y net-tools git htop lrzsz
+```
 
 ### 8、安装中文支持包
 
-    $ yum -y groupinstall chinese-support
+```sh
+$ yum -y groupinstall chinese-support
+```
 
 ### 9、安装基本编译环境
 
-    $ yum -y install gcc gcc-c++ make
+```sh
+$ yum -y install gcc gcc-c++ make
+```
 
 ### 10、关闭SELinux
 
-```shell
+```sh
 $ vim /etc/selinux/config
 SELINUX=disabled
 ```
 
 ### 11、设置主机名
 
-```shell
+```sh
 $ hostnamectl set-hostname CentOS7
 ```
 
 ### 12、设置时区
 
-```shell
+```sh
 $ timedatectl set-timezone Asia/Shanghai
 ```
 
@@ -149,8 +158,7 @@ $ timedatectl set-timezone Asia/Shanghai
 
 如果你在VMware相关的软件中安装`CentOS`则安装下面的软件。
 
-```shell
+```sh
 ~$ yum install -y open-vm-tools
 ~$ sudo systemctl enable --now vmtoolsd.service
 ```
-
