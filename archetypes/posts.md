@@ -5,6 +5,5 @@ tags = ['']
 categories = ['']
 description = ''
 isCJKLanguage = true
-lang = 'zh-cn'
 draft = false
 +++
